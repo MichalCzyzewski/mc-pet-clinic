@@ -1,13 +1,7 @@
 package pl.mczyzewski.mcpetclinic.services;
 
-import pl.mczyzewski.mcpetclinic.model.Vet;
+import pl.mczyzewski.mcpetclinic.model.Owner;
 
-import java.util.Set;
+public interface VetService extends CrudService<Owner,Long>  {
 
-public interface VetService {
-    Vet findById(Long id);
-
-    Vet save(Vet vet);
-
-    Set<Vet> findAll();
 }
