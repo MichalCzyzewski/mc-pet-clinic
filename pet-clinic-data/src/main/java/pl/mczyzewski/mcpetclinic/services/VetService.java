@@ -1,7 +1,7 @@
 package pl.mczyzewski.mcpetclinic.services;
 
-import pl.mczyzewski.mcpetclinic.model.Owner;
+import pl.mczyzewski.mcpetclinic.model.Vet;
 
-public interface VetService extends CrudService<Owner,Long>  {
+public interface VetService extends CrudService<Vet,Long>  {
 
 }
