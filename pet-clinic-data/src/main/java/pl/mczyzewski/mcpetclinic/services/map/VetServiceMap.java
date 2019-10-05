@@ -1,12 +1,12 @@
 package pl.mczyzewski.mcpetclinic.services.map;
 
-import pl.mczyzewski.mcpetclinic.model.Pet;
 import pl.mczyzewski.mcpetclinic.model.Vet;
-import pl.mczyzewski.mcpetclinic.services.CrudService;
+import pl.mczyzewski.mcpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+
     @Override
     public Set<Vet> findAll() {
         return super.findAll();

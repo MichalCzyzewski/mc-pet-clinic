@@ -1,12 +1,12 @@
 package pl.mczyzewski.mcpetclinic.services.map;
 
-import pl.mczyzewski.mcpetclinic.model.Owner;
+
 import pl.mczyzewski.mcpetclinic.model.Pet;
-import pl.mczyzewski.mcpetclinic.services.CrudService;
+import pl.mczyzewski.mcpetclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
