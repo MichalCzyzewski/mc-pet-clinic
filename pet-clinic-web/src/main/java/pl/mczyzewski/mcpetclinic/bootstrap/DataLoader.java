@@ -6,8 +6,7 @@ import pl.mczyzewski.mcpetclinic.model.Owner;
 import pl.mczyzewski.mcpetclinic.model.Vet;
 import pl.mczyzewski.mcpetclinic.services.OwnerService;
 import pl.mczyzewski.mcpetclinic.services.VetService;
-import pl.mczyzewski.mcpetclinic.services.map.OwnerServiceMap;
-import pl.mczyzewski.mcpetclinic.services.map.VetServiceMap;
+
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -25,34 +24,34 @@ public class DataLoader implements CommandLineRunner {
 
         Owner owner1 = new Owner();
         owner1.setId(1L);
-        owner1.setFirstName("Matt");
-        owner1.setLastName("Scott");
+        owner1.setFirstName("Michael");
+        owner1.setLastName("Weston");
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setId(2L);
-        owner2.setLastName("Tom");
-        owner2.setLastName("Philips");
+        owner2.setFirstName("Fiona");
+        owner2.setLastName("Glenanne");
 
         ownerService.save(owner2);
 
-        System.out.println("Loading Owners ...");
+        System.out.println("Loaded Owners....");
 
         Vet vet1 = new Vet();
         vet1.setId(1L);
-        vet1.setFirstName("Monica");
-        vet1.setLastName("Foo");
+        vet1.setFirstName("Sam");
+        vet1.setLastName("Axe");
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setId(2L);
-        vet2.setLastName("Vanessa");
-        vet2.setLastName("Mea");
+        vet2.setFirstName("Jessie");
+        vet2.setLastName("Porter");
 
         vetService.save(vet2);
 
-        System.out.println("Loading Vets ...");
+        System.out.println("Loaded Vets....");
     }
 }
