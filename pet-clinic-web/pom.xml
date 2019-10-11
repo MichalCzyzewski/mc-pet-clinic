@@ -104,9 +104,9 @@
                 <configuration>
                     <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
                     <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
-                    <wroFile>../src/wro/wro.xml</wroFile>
-                    <extraConfigFile>../src/wro/wro.properties</extraConfigFile>
-                    <contextFolder>../src/main/less</contextFolder>
+                    <wroFile>../pet-clinic-web/src/wro/wro.xml</wroFile>
+                    <extraConfigFile>../pet-clinic-web/src/wro/wro.properties</extraConfigFile>
+                    <contextFolder>../pet-clinic-web/src/main/less</contextFolder>
                 </configuration>
                 <dependencies>
                     <dependency>
