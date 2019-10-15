@@ -3,11 +3,14 @@ package pl.mczyzewski.mcpetclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.mczyzewski.mcpetclinic.model.Owner;
+import pl.mczyzewski.mcpetclinic.model.Pet;
 import pl.mczyzewski.mcpetclinic.model.PetType;
 import pl.mczyzewski.mcpetclinic.model.Vet;
 import pl.mczyzewski.mcpetclinic.services.OwnerService;
 import pl.mczyzewski.mcpetclinic.services.PetTypeService;
 import pl.mczyzewski.mcpetclinic.services.VetService;
+
+import java.time.LocalDate;
 
 
 @Component
@@ -41,6 +44,13 @@ public class DataLoader implements CommandLineRunner {
         owner1.setCity("London");
         owner1.setTelephone("666777888");
 
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(saveDogType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setName("Fluffy");
+        owner1.getPets().add(mikesPet);
+
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
@@ -49,6 +59,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("33 BoomAvenue");
         owner2.setCity("London");
         owner2.setTelephone("666777888");
+
+        Pet fionaCat = new Pet();
+        fionaCat.setName("Fetch");
+        fionaCat.setPetType(saveCatType);
+        fionaCat.setOwner(owner2);
+        fionaCat.setBirthDate(LocalDate.now());
+        owner2.getPets().add(fionaCat);
 
         ownerService.save(owner2);
 

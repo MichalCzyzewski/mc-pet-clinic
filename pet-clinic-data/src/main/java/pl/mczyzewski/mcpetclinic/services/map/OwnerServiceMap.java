@@ -2,7 +2,8 @@ package pl.mczyzewski.mcpetclinic.services.map;
 
 import org.springframework.stereotype.Service;
 import pl.mczyzewski.mcpetclinic.model.Owner;
-import pl.mczyzewski.mcpetclinic.model.PetType;
+import pl.mczyzewski.mcpetclinic.model.Pet;
+
 import pl.mczyzewski.mcpetclinic.services.OwnerService;
 import pl.mczyzewski.mcpetclinic.services.PetService;
 import pl.mczyzewski.mcpetclinic.services.PetTypeService;
@@ -41,6 +42,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
                         }
                     } else {
                         throw new RuntimeException("Pet type is required");
+                    }
+                    if(pet.getId() == null)
+                    {
+                        Pet savedPet = petService.save(pet);
+                        pet.setId(savedPet.getId());
                     }
                 });
             }
