@@ -7,6 +7,7 @@ import pl.mczyzewski.mcpetclinic.services.SpecialtiesService;
 import java.util.Set;
 @Service
 public class SpecialityMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+
     @Override
     public Set<Specialty> findAll() {
         return super.findAll();
@@ -14,7 +15,7 @@ public class SpecialityMapService extends AbstractMapService<Specialty, Long> im
 
     @Override
     public Specialty findById(Long aLong) {
-        return super.findById();
+        return super.findById(aLong);
     }
 
     @Override
