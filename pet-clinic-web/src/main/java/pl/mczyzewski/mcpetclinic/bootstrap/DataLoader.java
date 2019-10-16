@@ -2,10 +2,7 @@ package pl.mczyzewski.mcpetclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import pl.mczyzewski.mcpetclinic.model.Owner;
-import pl.mczyzewski.mcpetclinic.model.Pet;
-import pl.mczyzewski.mcpetclinic.model.PetType;
-import pl.mczyzewski.mcpetclinic.model.Vet;
+import pl.mczyzewski.mcpetclinic.model.*;
 import pl.mczyzewski.mcpetclinic.services.OwnerService;
 import pl.mczyzewski.mcpetclinic.services.PetTypeService;
 import pl.mczyzewski.mcpetclinic.services.VetService;
@@ -36,6 +33,15 @@ public class DataLoader implements CommandLineRunner {
         PetType cat = new PetType();
         cat.setName("Cat");
         PetType saveCatType = petTypeService.save(cat);
+
+        Specialty radiology = new Specialty();
+        radiology.setDescription("Radiology");
+
+        Specialty surgery = new Specialty();
+        radiology.setDescription("Surgery");
+
+        Specialty dentistry = new Specialty();
+        radiology.setDescription("Dentistry");
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
