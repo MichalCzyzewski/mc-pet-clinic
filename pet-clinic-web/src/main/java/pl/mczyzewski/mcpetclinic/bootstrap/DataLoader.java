@@ -39,12 +39,15 @@ public class DataLoader implements CommandLineRunner {
 
         Specialty radiology = new Specialty();
         radiology.setDescription("Radiology");
+        Specialty savedRadiology =  specialtyService.save(radiology);
 
         Specialty surgery = new Specialty();
         radiology.setDescription("Surgery");
+        Specialty savedSurgery =  specialtyService.save(surgery);
 
         Specialty dentistry = new Specialty();
         radiology.setDescription("Dentistry");
+        Specialty savedDentistry =  specialtyService.save(dentistry);
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
@@ -83,12 +86,14 @@ public class DataLoader implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
+        vet1.getSpecialties().add(savedRadiology);
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
+        vet2.getSpecialties().add(savedSurgery);
 
         vetService.save(vet2);
 
