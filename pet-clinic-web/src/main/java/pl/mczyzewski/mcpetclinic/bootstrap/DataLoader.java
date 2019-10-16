@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import pl.mczyzewski.mcpetclinic.model.*;
 import pl.mczyzewski.mcpetclinic.services.OwnerService;
 import pl.mczyzewski.mcpetclinic.services.PetTypeService;
+import pl.mczyzewski.mcpetclinic.services.SpecialtyService;
 import pl.mczyzewski.mcpetclinic.services.VetService;
 
 import java.time.LocalDate;
@@ -16,11 +17,13 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialtyService specialtyService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialtyService = specialtyService;
     }
 
     @Override

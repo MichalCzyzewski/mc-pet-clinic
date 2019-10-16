@@ -2,6 +2,6 @@ package pl.mczyzewski.mcpetclinic.services;
 
 import pl.mczyzewski.mcpetclinic.model.Specialty;
 
-public interface SpecialtiesService extends CrudService<Specialty,Long> {
+public interface SpecialtyService extends CrudService<Specialty,Long> {
 
 }

@@ -2,11 +2,11 @@ package pl.mczyzewski.mcpetclinic.services.map;
 
 import org.springframework.stereotype.Service;
 import pl.mczyzewski.mcpetclinic.model.Specialty;
-import pl.mczyzewski.mcpetclinic.services.SpecialtiesService;
+import pl.mczyzewski.mcpetclinic.services.SpecialtyService;
 
 import java.util.Set;
 @Service
-public class SpecialityMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+public class SpecialityMapService extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
     @Override
     public Set<Specialty> findAll() {
