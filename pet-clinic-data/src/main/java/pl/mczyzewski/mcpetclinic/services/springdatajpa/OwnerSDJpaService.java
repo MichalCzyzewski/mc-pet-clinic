@@ -4,8 +4,6 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import pl.mczyzewski.mcpetclinic.model.Owner;
 import pl.mczyzewski.mcpetclinic.repositories.OwnerRepository;
-import pl.mczyzewski.mcpetclinic.repositories.PetRepository;
-import pl.mczyzewski.mcpetclinic.repositories.PetTypeRepository;
 import pl.mczyzewski.mcpetclinic.services.OwnerService;
 
 import java.util.HashSet;
@@ -14,16 +12,12 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-public class OwnerSDJpa implements OwnerService {
+public class OwnerSDJpaService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
-    private final PetRepository petRepository;
-    private final PetTypeRepository petTypeRepository;
 
-    public OwnerSDJpa(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
+    public OwnerSDJpaService(OwnerRepository ownerRepository) {
         this.ownerRepository = ownerRepository;
-        this.petRepository = petRepository;
-        this.petTypeRepository = petTypeRepository;
     }
 
     @Override
