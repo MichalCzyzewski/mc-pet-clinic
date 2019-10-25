@@ -1,4 +1,7 @@
 package pl.mczyzewski.mcpetclinic.repositories;
 
-public interface OwnerRepository {
+import org.springframework.data.repository.CrudRepository;
+import pl.mczyzewski.mcpetclinic.model.Owner;
+
+public interface OwnerRepository  extends CrudRepository<Owner,Long> {
 }
