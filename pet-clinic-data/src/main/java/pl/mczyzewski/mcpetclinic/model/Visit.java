@@ -12,7 +12,7 @@ public class Visit extends BaseEntity {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "pet_id")
     private Pet pet;
 
