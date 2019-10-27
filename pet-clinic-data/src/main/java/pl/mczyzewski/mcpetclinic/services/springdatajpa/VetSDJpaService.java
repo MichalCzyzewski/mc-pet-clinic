@@ -8,6 +8,7 @@ import pl.mczyzewski.mcpetclinic.services.VetService;
 
 import java.util.HashSet;
 import java.util.Set;
+
 @Service
 @Profile("springdatajpa")
 public class VetSDJpaService implements VetService {
