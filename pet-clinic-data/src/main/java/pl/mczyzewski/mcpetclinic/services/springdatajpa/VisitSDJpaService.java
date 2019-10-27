@@ -5,10 +5,9 @@ import org.springframework.stereotype.Service;
 import pl.mczyzewski.mcpetclinic.model.Visit;
 import pl.mczyzewski.mcpetclinic.repositories.VisitRepository;
 import pl.mczyzewski.mcpetclinic.services.VisitService;
-
-
 import java.util.HashSet;
 import java.util.Set;
+
 @Service
 @Profile("springdatajpa")
 public class VisitSDJpaService implements VisitService {
