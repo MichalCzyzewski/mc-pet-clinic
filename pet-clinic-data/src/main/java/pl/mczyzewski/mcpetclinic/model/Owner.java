@@ -3,6 +3,7 @@ package pl.mczyzewski.mcpetclinic.model;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+
 @Entity
 @Table(name = "owners")
 public class Owner extends Person {
