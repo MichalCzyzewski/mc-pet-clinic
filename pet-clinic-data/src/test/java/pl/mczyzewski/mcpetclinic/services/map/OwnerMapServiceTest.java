@@ -3,6 +3,9 @@ package pl.mczyzewski.mcpetclinic.services.map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pl.mczyzewski.mcpetclinic.model.Owner;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Set;
 
 class OwnerMapServiceTest {
 
@@ -22,6 +25,9 @@ class OwnerMapServiceTest {
 
     @Test
     void findAll() {
+
+        Set<Owner> ownerSet = ownerMapService.findAll();
+        assertEquals(1,ownerSet.size());
     }
 
     @Test
@@ -42,5 +48,29 @@ class OwnerMapServiceTest {
 
     @Test
     void findByLastName() {
+    }
+
+    @Test
+    void testFindAll() {
+    }
+
+    @Test
+    void testFindById() {
+    }
+
+    @Test
+    void testSave() {
+    }
+
+    @Test
+    void testDelete() {
+    }
+
+    @Test
+    void testDeleteById() {
+    }
+
+    @Test
+    void testFindByLastName() {
     }
 }

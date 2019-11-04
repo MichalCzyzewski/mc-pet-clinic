@@ -63,6 +63,7 @@
             </exclusions>
         </dependency>
 
+
         <!-- Databases - Uses HSQL by default -->
         <dependency>
             <groupId>org.hsqldb</groupId>
