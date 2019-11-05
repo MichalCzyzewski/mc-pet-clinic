@@ -40,7 +40,7 @@ class OwnerMapServiceTest {
 
     @Test
     void saveExistingId() {
-        Long id = 2L;
+        Long id = 1L;
         Owner owner2 = Owner.builder().id(ownerId).build();
         Owner saveOwner = ownerMapService.save(owner2);
 

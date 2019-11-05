@@ -55,14 +55,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
-
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- Databases - Uses HSQL by default -->
         <dependency>
@@ -76,15 +75,15 @@
             <scope>runtime</scope>
         </dependency>
 
-<!--         caching-->
+        <!--         caching-->
         <dependency>
             <groupId>javax.cache</groupId>
             <artifactId>cache-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.ehcache</groupId>-->
+        <!--            <artifactId>ehcache</artifactId>-->
+        <!--        </dependency>-->
 
         <!-- webjars -->
         <dependency>
@@ -118,12 +117,6 @@
             <artifactId>pet-clinic-data</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.5.2</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
