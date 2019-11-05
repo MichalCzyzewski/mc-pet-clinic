@@ -3,9 +3,10 @@ package pl.mczyzewski.mcpetclinic.services.map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pl.mczyzewski.mcpetclinic.model.Owner;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class OwnerMapServiceTest {
 
@@ -32,22 +33,57 @@ class OwnerMapServiceTest {
 
     @Test
     void findById() {
+        Owner owner = ownerMapService.findById(ownerId);
+        assertEquals(ownerId,owner.getId());
+
     }
 
     @Test
-    void save() {
+    void saveExistingId() {
+        Long id = 2L;
+        Owner owner2 = Owner.builder().id(ownerId).build();
+        Owner saveOwner = ownerMapService.save(owner2);
+
+        assertEquals(id,saveOwner.getId());
+
+    }
+
+    @Test
+    void saveNoId() {
+
+        Owner ownerSave = ownerMapService.save(Owner.builder().build());
+        assertNotNull(ownerSave);
+        assertNotNull(ownerSave.getId());
     }
 
     @Test
     void delete() {
+
+        ownerMapService.delete(ownerMapService.findById(ownerId));
+
+        assertEquals(0,ownerMapService.findAll().size());
     }
 
     @Test
     void deleteById() {
+
+        ownerMapService.deleteById(ownerId);
+        assertEquals(0,ownerMapService.findAll().size());
     }
 
     @Test
     void findByLastName() {
+
+        Owner kowalsky = ownerMapService.findByLastName(lastName);
+        assertNotNull(kowalsky);
+        assertEquals(ownerId,kowalsky.getId());
+    }
+
+    @Test
+    void findByLastNameNotFound() {
+
+        Owner kowalsky = ownerMapService.findByLastName("foo");
+        assertNull(kowalsky);
     }
 
     @Test
