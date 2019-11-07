@@ -18,6 +18,8 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class OwnerSDJpaServiceTest {
 
+    public static final String LAST_NAME = "Kowalsky";
+
     @Mock
     OwnerRepository ownerRepository;
     @Mock
@@ -34,11 +36,11 @@ class OwnerSDJpaServiceTest {
     @Test
     void findByLastName() {
 
-        Owner returnOwner = Owner.builder().id(1L).lastName("Kowalsky").build();
+        Owner returnOwner = Owner.builder().id(1L).lastName(LAST_NAME).build();
         when(ownerRepository.findByLastName(any())).thenReturn(returnOwner);
-        Owner kowalsky = ownerService.findByLastName("kowalsky");
+        Owner kowalsky = ownerService.findByLastName(LAST_NAME);
 
-        assertEquals("kowalsky",kowalsky.getLastName());
+        assertEquals(LAST_NAME,kowalsky.getLastName());
     }
 
     @Test
