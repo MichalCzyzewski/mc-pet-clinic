@@ -5,5 +5,5 @@ import pl.mczyzewski.mcpetclinic.model.Owner;
 
 public interface OwnerRepository  extends CrudRepository<Owner,Long> {
 
-    Owner findAllByLastName(String lastName);
+    Owner findByLastName(String lastName);
 }
