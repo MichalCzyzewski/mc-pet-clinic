@@ -14,9 +14,11 @@ import pl.mczyzewski.mcpetclinic.services.OwnerService;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.hamcrest.Matchers.hasSize;
+import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(MockitoExtension.class)
 class OwnerControllerTest {
@@ -45,11 +47,29 @@ class OwnerControllerTest {
     void listOwners() throws Exception{
         when(ownerService.findAll()).thenReturn(owners);
 
-        mockMvc.perform(get("/"))
-        .andExpect(status().is(200));
+        mockMvc.perform(get("/owners"))
+        .andExpect(status().isOk())
+        .andExpect(view().name("owners/index"))
+        .andExpect(model().attribute("owners",hasSize(2)));
     }
 
     @Test
-    void findOwners() {
+    void listOwnersByIndex() throws Exception{
+        when(ownerService.findAll()).thenReturn(owners);
+
+        mockMvc.perform(get("/owners/index"))
+        .andExpect(status().isOk())
+        .andExpect(view().name("owners/index"))
+        .andExpect(model().attribute("owners",hasSize(2)));
+    }
+
+    @Test
+    void findOwners() throws Exception {
+
+        mockMvc.perform(get("/owners/find"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("notImplemented"));
+
+        verifyZeroInteractions(ownerService);
     }
 }
