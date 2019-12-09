@@ -22,3 +22,4 @@ public class PetType extends BaseEntity {
         return name;
     }
 }
+ 
