@@ -75,6 +75,30 @@ class OwnerControllerTest {
         verifyZeroInteractions(ownerService);
     }
 
+//    @Test
+//    void processFindFormReturnMany() throws Exception {
+//
+//        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(owners);
+//
+//        mockMvc.perform(get("/owners"))
+//                .andExpect(status().isOk())
+//                .andExpect(view().name("owners/ownersList"))
+//                .andExpect(model().attribute("owners",hasSize(2)));
+//    }
+//
+//    @Test
+//    void processFindFormReturnOne() throws Exception {
+//
+//        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1L).build()));
+//
+//        mockMvc.perform(get("/owners"))
+//                .andExpect(status().isOk())
+//                .andExpect(view().name("owners/ownersList"))
+//                .andExpect(model().attribute("owners",hasSize(2)));
+//    }
+
+
+
     @Test
     void displayOwner() throws Exception {
         when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1L).build());
@@ -85,8 +109,5 @@ class OwnerControllerTest {
                 .andExpect(model().attribute("owner", hasProperty("id", is(1L))));
     }
 
-    @Test
-    void processFindFormReturnMany() throws Exception {
-    }
 
 }
