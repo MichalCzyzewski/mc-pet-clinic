@@ -27,7 +27,7 @@ public class OwnerController {
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
-        dataBinder.setAllowedFields("id");
+        dataBinder.setDisallowedFields("id");
     }
 
 
@@ -37,24 +37,17 @@ public class OwnerController {
         return "owners/findOwners";
     }
 
-    @GetMapping("/{ownerId}")
-    public ModelAndView showOwner(@PathVariable("ownerId") Long ownerId) {
-        ModelAndView mnv = new ModelAndView("owners/ownerDetails");
-        mnv.addObject(ownerService.findById(ownerId));
-        return mnv;
-    }
-
-
     @GetMapping
     public String processFindForm(Owner owner, BindingResult result, Model model)
     {
-        // allow parameters GET result for /owners to return all records
+        // allow parameterless GET request  for /owners to return all records
         if(owner.getLastName() == null){
             owner.setLastName("");//empty string signifies broadest possible search
         }
 
         //find owners by last name
-        List<Owner> results = ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> results = ownerService.findAllByLastNameLike("%" + owner.getLastName() + "%");
+
         //no owners found
         if(results.isEmpty()) {
             result.rejectValue("lastName", "notFound", "not found");
@@ -66,9 +59,16 @@ public class OwnerController {
             return "redirect:/owners/" + owner.getId();
         }else{
             //multiple owners found
-            model.addAttribute("Selections", results);
+            model.addAttribute("selections", results);
             return "owners/ownersList";
         }
+    }
+
+    @GetMapping("/{ownerId}")
+    public ModelAndView showOwner(@PathVariable("ownerId") Long ownerId) {
+        ModelAndView mnv = new ModelAndView("owners/ownerDetails");
+        mnv.addObject(ownerService.findById(ownerId));
+        return mnv;
     }
 
 
