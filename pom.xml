@@ -18,7 +18,7 @@
         <start-class>pl.mczyzewski.mcpetclinic.McPetClinicApplication</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
+        <java.version>12</java.version>
         <jaxb.version>2.3.0</jaxb.version>
         <maven.comiler.source>${java.version}</maven.comiler.source>
         <maven.comiler.target>${java.version}</maven.comiler.target>
