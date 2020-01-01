@@ -29,9 +29,8 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
         int count = petTypeService.findAll().size();
 
-        if(count == 0)
-        {
-             loadData();
+        if (count == 0) {
+            loadData();
         }
     }
 
@@ -46,15 +45,15 @@ public class DataLoader implements CommandLineRunner {
 
         Specialty radiology = new Specialty();
         radiology.setDescription("Radiology");
-        Specialty savedRadiology =  specialtyService.save(radiology);
+        Specialty savedRadiology = specialtyService.save(radiology);
 
         Specialty surgery = new Specialty();
         radiology.setDescription("Surgery");
-        Specialty savedSurgery =  specialtyService.save(surgery);
+        Specialty savedSurgery = specialtyService.save(surgery);
 
         Specialty dentistry = new Specialty();
         radiology.setDescription("Dentistry");
-        Specialty savedDentistry =  specialtyService.save(dentistry);
+        Specialty savedDentistry = specialtyService.save(dentistry);
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
