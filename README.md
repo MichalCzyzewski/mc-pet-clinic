@@ -1,5 +1,5 @@
 [![CircleCI](https://circleci.com/gh/MichalCzyzewski/mc-pet-clinic.svg?style=svg)](https://circleci.com/gh/MichalCzyzewski/mc-pet-clinic)
-# MC Pet Clinic
+# MC Pet Clinic by Michal Czyzewski
 
 This repositorium was created using course tips : [Spring Framework 5: Beginner to Guru](https://www.udemy.com/spring-framework-5-beginner-to-guru/?couponCode=GITHUB_SFGPETCLINIC).
 
