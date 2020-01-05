@@ -14,7 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "pets")
-public class Pet extends BaseEntity{
+public class Pet extends BaseEntity {
 
     @Builder
     public Pet(Long id, String name, PetType petType, Owner owner, LocalDate birthDate, Set<Visit> visits) {
@@ -24,7 +24,7 @@ public class Pet extends BaseEntity{
         this.owner = owner;
         this.birthDate = birthDate;
 
-        if(visits == null || visits.size() > 0) {
+        if (visits == null || visits.size() > 0) {
             this.visits = visits;
         }
     }
