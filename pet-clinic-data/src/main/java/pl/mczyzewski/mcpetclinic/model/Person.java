@@ -19,7 +19,6 @@ public class Person extends BaseEntity {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
